@@ -1,7 +1,6 @@
 import pickle
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from sklearn.datasets import make_regression
 
 # Загружаем предобработанные данные
 train_data = np.load("train/train_data_scaled.npy")
@@ -11,7 +10,6 @@ model = LinearRegression()
 
 X_train = train_data[:, :-1]  # признаки до последнего
 y_train = train_data[:, -1]   # последний признак
-
 model.fit(X_train, y_train)
 
 # Сохраняем обученную модель в файл с помощью pickle
