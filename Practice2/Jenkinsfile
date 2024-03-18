@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Git') {
+            steps {
+                // Выполнение операции checkout для Git репозитория
+                checkout([$class: 'GitSCM', 
+                          branches: [[name: 'master']], 
+                          userRemoteConfigs: [[url: 'https://github.com/a1ip/ml-datasets.git']]])
+                echo 'Git-Checkout'
+            }
+        }
+
+        stage('Prepare Data') {
+            steps {
+                // Выполнение скрипта Python для подготовки данных
+                sh 'python prepare_data.py'
+                echo 'Prepare Data'
+            }
+        }
+
+        stage('Fit Model') {
+            steps {
+                // Выполнение скрипта Python для обучения модели
+                sh 'python fit_model.py'
+                echo 'Fit Model'
+            }
+        }
+
+        stage('Test Model') {
+            steps {
+                // Выполнение скрипта Python для тестирования модели
+                sh 'python test_model.py'
+                echo 'Test Model'
+            }
+        }
+    }
+}
