@@ -3,3 +3,4 @@ train/
 venv
 .idea/
 model.pkl
+/datasets
