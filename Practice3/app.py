@@ -4,9 +4,9 @@ from model import get_answer
 
 # Отображение интерфейса Streamlit
 st.title("Вопросно-ответный ассистент")
-
 question = st.text_input("Введите ваш вопрос:")
 context = st.text_area("Введите контекст:")
+
 
 if st.button("Получить ответ"):
     if question and context:

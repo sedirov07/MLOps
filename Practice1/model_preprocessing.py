@@ -1,6 +1,7 @@
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 
+
 # Загружаем данные
 train_data = np.load("train/train_data.npy")
 test_data = np.load("test/test_data.npy")

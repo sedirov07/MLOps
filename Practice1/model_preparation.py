@@ -2,6 +2,7 @@ import pickle
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+
 # Загружаем предобработанные данные
 train_data = np.load("train/train_data_scaled.npy")
 
