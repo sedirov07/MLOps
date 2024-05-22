@@ -20,7 +20,8 @@ data_encoded = pd.get_dummies(data, columns=categorical_columns)
 data_encoded.replace({True: 1, False: 0}, inplace=True)
 
 # Разделяем данные на обучающий и тестовый наборы в соотношении 70/30
-train_data, test_data = train_test_split(data_encoded, test_size=0.3, random_state=42)
+train_data, test_data = train_test_split(data_encoded, test_size=0.3,
+                                         random_state=42)
 
 # Сохраняем данные для тренировки и тестирования
 np.save("train/train_data.npy", train_data)

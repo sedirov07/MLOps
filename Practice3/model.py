@@ -1,5 +1,6 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 
+
 # Загрузка модели и токенизатора
 model_name = "deepset/roberta-base-squad2"
 model = AutoModelForQuestionAnswering.from_pretrained(model_name)

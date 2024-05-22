@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 
+
 # Загружаем модель
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)

@@ -1,5 +1,6 @@
 from catboost.datasets import titanic
 
+
 # Создаем датасет
 train_df, _ = titanic()
 
